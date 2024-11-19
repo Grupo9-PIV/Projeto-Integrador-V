@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "Backend do Projeto Integrador V"
+authors = [
+    "João Vitor Alves <jvitor.alol+contato@gmail.com>",
+]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/Grupo9-PIV/Projeto-Integrador-V"
+homepage = "https://github.com/Grupo9-PIV"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.115.5"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
