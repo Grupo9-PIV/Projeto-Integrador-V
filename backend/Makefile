@@ -9,8 +9,9 @@ setup:
 	python3 -m pip install --user pipx
 	python3 -m pipx ensurepath
 	@echo "Instalando Poetry com pipx..."
-	pipx install poetry
+	@export PATH="$$PATH:$$HOME/.local/bin" && pipx install poetry
 	@echo "Poetry instalado com sucesso!"
+	@echo "Pode ser necessário recarregar o shell para atualizar o PATH..."
 
 install:
 	poetry install --without dev
@@ -34,5 +35,8 @@ coverage:
 	poetry run task post_test
 
 clean:
+	@echo "Deletando o ambiente virtual..."
 	rm -rf $(VENV)
+	@echo "Limpando o cache do projeto..."
 	rm -rf .pytest_cache .ruff_cache coverage .coverage coverage.xml htmlcov
+	@echo "Concluído com sucesso!"
